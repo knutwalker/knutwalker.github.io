@@ -1,0 +1,10 @@
+#!/bin/bash
+
+jekyll serve --watch &
+jekyllPID=$!
+bin/fswatcher &
+fswatcherPID=$!
+
+trap "kill $jekyllPID $fswatcherPID" INT EXIT
+
+wait

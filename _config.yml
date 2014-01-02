@@ -1,0 +1,15 @@
+name: knutwalker
+author: Paul Horn
+description: Coding, and things
+
+url: http://blog.knutwalker.de
+permalink: /:year/:month/:title.html
+paginate: 10
+
+safe: true
+lsi: false
+
+pygments: true
+markdown: redcarpet
+
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile', 'bin', 'others']

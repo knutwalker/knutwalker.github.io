@@ -1,0 +1,15 @@
+#!/bin/bash
+
+sentinel=/tmp/t.$$
+
+touch -t197001010000 $sentinel
+while :
+do
+  files=$(find _site -newer $sentinel -a -name \*.html)
+  if [ "$files" != "" ]; then
+    touch $sentinel
+    echo "reloading active tab..."
+    osascript bin/reload_chrome_active_tab.applescript
+  fi
+  sleep 0.1
+done

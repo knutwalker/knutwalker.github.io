@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width">
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="/assets/css/style.css" rel="stylesheet" />
+  <link href="/assets/css/colors-dark.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header id="header">
+    <h1><a href="/"><i class="icon-sun"></i> {{ site.name }}</a></h1>
+    <p>{{ site.description }}</p>
+  </header>
+
+  <div id="page">
+    <div id="sidebar">
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="https://twitter.com/knutwalker">Twitter</a></li>
+          <li><a href="https://github.com/knutwalker">GitHub</a></li>
+          <li><a href="/archives">Archive</a></li>
+          <li><a href="/feed.xml">RSS Feed</a></li>
+        </ul>
+        {% if site.tags.size > 0 %}
+          <div class="tags-and-numbers">
+            <table class="tags-and-numbers-table">
+              {% for tag in site.tags %}
+                {% assign tag_name = tag | first %}
+                {% assign tag_posts = site.tags[tag_name] %}
+                <tr>
+                  <td class="tag-name">
+                    <a href="/tags.html#{{tag | first | cgi_encode}}">{{ tag_name }}</a>
+                  </td>
+                  <td class="tag-count">{{ tag_posts.size }}</td>
+                </tr>
+              {% endfor %}
+              </tr>
+            </table>
+            <ul>
+            </ul>
+          </div>
+        {% endif %}
+      </nav>
+    </div>
+
+    <div id="content">
+      {{ content }}
+    </div>
+  </div>
+
+  <footer id="footer">
+    <p class="copyright">Copyright &copy; {{ site.time | date: '%Y' }} {{ site.author }}. Powered by <a href="http://pages.github.com">Github Pages</a> and <a href="http://jekyllrb.com">Jekyll</a>, theme by <a href="http://www.webmaster-source.com">Matt Harzewski</a></p>
+  </footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="/assets/js/jquery.mobilemenu.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('#sidebar nav ul').mobileMenu({'topOptionText': 'Menu', 'prependTo': '#sidebar nav'});
+    });
+  </script>
+
+</body>
+</html>
