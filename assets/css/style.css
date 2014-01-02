@@ -113,6 +113,17 @@ h3 {
 	font-size: 14px;
 	margin: 0 0 10px 0;
 }
+hr {
+  height: 0;
+  border: none;
+  text-align: center;
+  font-size: 18px;
+  margin: 2em 1em 4em 0;
+}
+hr:after {
+  content: "·····";
+  letter-spacing: 2em;
+}
 
 
 

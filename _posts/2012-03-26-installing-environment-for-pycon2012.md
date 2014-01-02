@@ -3,7 +3,6 @@ layout: post
 title: "Installing the environment for the PyCon2012 pandas tutorial"
 tags:
 - pandas
-- pycon 2012
 - python
 ---
 

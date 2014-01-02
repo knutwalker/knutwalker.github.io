@@ -1,7 +1,9 @@
 ---
 layout: post
 title: "Migrate your watchlist from IMDb to trakt.tv"
-tags: trakt
+tags:
+- python
+- trakt
 ---
 
 [Trakt](http://trakt.tv/) is an exciting service for managing your movie watchlist, collection, and other lists.
