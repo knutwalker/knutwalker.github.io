@@ -87,7 +87,7 @@ forAll(Gen.chooseNum(1, 3)) { n =>
 
 Cool, this works!
 
-Allegedly, this is [fixed](https://github.com/rickynils/scalacheck/issues/8) with `1.11.0`, but this version is not compatible with ScalaTest (as might the fix, i haven't looked into it).
+Allegedly, this is [fixed](https://github.com/rickynils/scalacheck/issues/8) with `1.11.0`, but this version is not compatible with ScalaTest (as might the fix, I haven't looked into it).
 
 * * *
 
@@ -151,7 +151,7 @@ println(l1 take 10 mkString ", ")   // => 55, 65, 92, 52, 16, 12, 0, 24, 21, 76
 
 Now, you only have to follow [ScalaChecks `Choose[T]`](https://github.com/rickynils/scalacheck/blob/1.10.1/src/main/scala/org/scalacheck/Gen.scala#L24) and implement this for each of the remaining `Choose[T]`s and you can run deterministic tests with all other generators.
 
-**Note**: This probably only work with `1.10.x`, it seems `1.11.x` take a slightly different approach. But then again, I haven't looked into it yet.
+**Note**: This probably only works with `1.10.x`, it seems `1.11.x` take a slightly different approach. But then again, I haven't looked into it yet.
 
 * * *
 
