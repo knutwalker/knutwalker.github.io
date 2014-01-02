@@ -202,6 +202,13 @@ h3 {
 
 
 /*** Posts ***/
+.post-excerpt:after {
+  content: "…";
+}
+.post-excerpt p {
+  margin-bottom: 0.4em;
+}
+
 article {
 	margin-bottom: 40px;
 }

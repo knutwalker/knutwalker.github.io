@@ -7,4 +7,6 @@ fswatcherPID=$!
 
 trap "kill $jekyllPID $fswatcherPID" INT EXIT
 
+open "http://localhost:4000/"
+
 wait

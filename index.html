@@ -1,9 +1,12 @@
 ---
 layout: default
+post_limit: 20
+post_cutoff: 10
 ---
 
 <div id="home">
-  {% for post in site.posts limit:20 %}
+  {% for post in site.posts limit:page.post_limit %}
+    {% if forloop.index0 < page.post_cutoff %}
     <article class="post">
       {% if post.external-url %}
         <h1>
@@ -16,8 +19,20 @@ layout: default
           <small>{{ post.date | date_to_string }}</small>
         </h1>
       {% endif %}
-      <div class="post-content">{{ post.excerpt | markdownify }}</div>
-    </article>
-  {% endfor %}
+      <div class="post-content post-excerpt">{{ post.excerpt | markdownify }}</div>
+      </article>
+      {% else %}
+        {% if forloop.index0 == page.post_cutoff %}
+        <h2>Older posts</h2>
+        <ul class="posts">
+        {% endif %}
+          <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% if forloop.last %}
+        </ul>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% if site.posts.size > page.post_limit %}
   <p>... Check the <a href="/archives">archive for past posts</a>.</p>
+  {% endif %}
 </div>
