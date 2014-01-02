@@ -30,7 +30,9 @@
         </ul>
         <h3>fun projects</h3>
         <ul>
-          <li><a href="/bacon-number/">Bacon Numbers</a></li>
+          {% for project in site.data.projects %}
+          <li><a href="{{ project.url }}">{{ project.name }}</a></li>
+          {% endfor %}
         </ul>
         {% if site.tags.size > 0 %}
         <h3>Tags</h3>

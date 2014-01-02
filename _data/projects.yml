@@ -1,0 +1,6 @@
+- name: Bacon Numbers
+  url: /bacon-number/
+
+- name: Namespace Trie
+  url: /namespacetrie/
+
