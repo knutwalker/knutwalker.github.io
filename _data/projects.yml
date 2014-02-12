@@ -4,3 +4,6 @@
 - name: Namespace Trie
   url: /namespacetrie/
 
+- name: Cors-Play
+  url: /cors-play/
+
